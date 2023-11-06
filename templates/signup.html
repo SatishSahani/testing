@@ -1,0 +1,38 @@
+{% extends 'base.html' %} 
+{% block content %}
+<style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1515895309288-a3815ab7cf81?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHBob3RvJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    </style>
+    <h2>Add New Users</h2>
+    <form method="post"> <!-- Assuming this is your form element -->
+    
+        <!-- Other form fields go here -->
+    
+        <label for="user_role">Select User Role:</label>
+        <select id="user_role" name="user_role">
+            <option value="admin">Admin</option>
+            <option value="user">New User</option>
+        </select>
+    
+        <!-- Other form fields or buttons -->
+    
+    </form>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Add User</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logged in user</title>
+</head>
+<style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1529539795054-3c162aab037a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bG9naW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      margin:0px;
+    padding:0px   
+ }
+    /* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  .scrollable-container {
+    max-height: 300px; /* Adjust the maximum height as needed */
+    overflow: auto; /* Add vertical scrollbar if content exceeds max-height */
+    width:100%;
+    display:flex;
+    white-space: nowrap;
+    
+}
+</style>
+
+<body>
+    <div class="topnav">
+      <div class="scrollable-container">
+        <a class="active" href="#home">Home</a>
+        <a href="#HTML">HTML</a>
+        <a href="#CSS">CSS</a>
+        <a href="#JavaScript">JavaScript</a>
+        <a href="#SQL">SQL</a>
+        <a href="#Python">Python</a>
+        <a href="#Java">Java</a>
+        <a href="#PHP">PHP</a>
+        <a href="#W3.CSS">W3.CSS</a>
+        <a href="#C">C</a>
+        <a href="#C++">C++</a>
+        <a href="#C#">C#</a>
+        <a href="#Bootstrap">Bootstrap</a>
+        <a href="#React">React</a>
+        <a href="#MySQL">MySQL</a>
+        <a href="#jQuery">jQuery</a>
+        <a href="#Excel">Excel</a>
+        <a href="#XML">XML</a>
+        <a href="#Django">Django</a>
+        <a href="#Node.js">Node.js</a>
+        <a href="#R">R</a>
+        <a href="#TypeScript">TypeScript</a>
+        <a href="#Angular">Angular</a>
+        <a href="#Git">Git</a>
+        <a href="#PostgreSQL">PostgreSQL</a>
+        <a href="#MongoDB">MongoDB</a>
+        <a href="#ASP">ASP</a>
+        <a href="#AWS">AWS</a>
+        <a href="#AI">AI</a>
+        <a href="#Go">Go</a>
+        <a href="#Kotlin">Kotlin</a>
+        <a href="#Sass">Sass</a>
+        <a href="#Vue">Vue</a>
+        <a href="#GenAI">Gen AI</a>
+        <a href="#Cybersecurity">Cybersecurity</a>
+        <a href="#DataScience">Data Science</a>
+      </div>
+    </div>
+   
+   <h1> Welcome {{request.user}} !</h1>
+    <p>
+    This is the best website for Study and you are very lucky to access it</p>
+    <a href="/logout">Logout</a> |||
+    <a href="/signup/">Add new users</a>
+
+</body>
+</html>

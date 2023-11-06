@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <style>
+       
+            body {
+              background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyKGB-KGeHk2D-UJADSdIlWLQjb-Hy5KQw5g&usqp=CAU');
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-size: 100% 100%;
+            }
+            
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-control {
+            margin: 16px 3px;
+            position: relative;
+            box-sizing: border-box;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+</head>
+<body class="text-center">
+    <form class="form-signin" method="post" action="/login">
+        {% csrf_token %}
+        {% comment %} <img class="mb-4" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAH8AeAMBEQACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQQFBgcDAgj/xABCEAABAwMBBQMIBQkJAAAAAAABAgMEAAURIQYSMUFRExRhByIjVIGRobEycZKT8BUXQlJygsHR0iQmMzRTYmSisv/EABoBAQADAQEBAAAAAAAAAAAAAAADBAUCAQb/xAAzEQACAgECAwUFCAMBAAAAAAAAAQIDEQQSITFRE0FhcZEUFSIyoQUjJEJSgbHRweHwM//aAAwDAQACEQMRAD8A3GgCgCgCgCgCgCgCgCgCgCgCgCgCgCgCgE4mgFoAoBBQC0AhOKABQBmgA0ACgFoBD0oBaAKAKAKAKAKAjb5fbXYIRmXea1FZ4ArOqj0SkaqPgBXUYyk8RWQ3gocrbzae+AjY3ZxxMc/Rm3ABIV4pSSBj94/VVmOnjH/0kROx/lRAXO3eUecCqVfFo57keV2Ps8wD51PCOmXcQyld1KncY+1NsO9OnXdvosTXFD7QURVyFNM/lwV5XWx5iwNr9q7aQY9+mqAOcSF9sD4efmvJ6CD7jyOskuZc7D5Y5bS0NbQ25DqOBkQ/NUPrQTg+w+yqVugkvlLUNVGXM1KxX613+GJdpmNyGuCt3RSD0Uk6g+BqjKMovDLKafIk65PQoAoAoAoAoAoCt7YbUpsKGYsOOZ14mHdhwkHVZ/WV0SOZ/Akrr3+CRy2kQ9p2PAli9bXPput6VqAoegjc91tHh1P18aldnDbDgvqctd7JyU/y5V7CBxKRESn+NWo1kEpkPMdStKkrwUkapPAirMK8EEplAv8Aa2473bR04ZWfoj9E/wAq06XvWJcylbweUQrjHQa11OrJ5GYtumz7FORcLY+uNIHMDRY6KHMfgY41n36ZTWGXKb5RN32B25jbVRCh1KY9waA7djP/AGT1SfhwrCuplVLDNSE1NZRcKiOwoAoAoBBxoCO2ivMXZ+yy7pNPoYyN4gcVHgEjxJIHtrqMXKSiu8N4KrsRbJAD2099G9ermN4Aj/LMcUtJzw01Ps9s9jXyR5L6s4T72TsmRx1rqECOUiJlP8datQgV5SHFlgNyw5Llkd3byME6EjiT4CuNRa4YhHmzqmCl8UuQju0uz4X3dcP0Gcb/AGCdz3cfhXq0Oq27lLj58Tx6qjO3HArXlCsLEOELhb9Yb+hSDvBJOqSD0NX/ALL1UrJ9lZ8yKmtoUI748mZ0GwlPaK6+aOtbU1ngZsXjiNJCCtRUrUmoZ1pEkZnCFNlWa5M3C3q3X2Tka6LHNJ8D+OFZeq06nFpmhp7trPo/ZS/MbQ2iPOjqOHE5IPFJ4EHxBBFfPzi4ywzWTysk3XJ6FAFAFAZl5RZAve2uz+ymcxkr77MTyUAFFKT4YSv7Qq3p47YysIrHxUS2yJHsryEDmUiKkyOOtW4QK8pEVJkcdauQgV5SJxlz+4chY08xzOP2yKoyX45LxX8FhP8ACt+ZnEmTjnrX0UIZMiUidu20ltf2ARaUPKM5KGxuFtWBurBOvDgKoUaG6Ov7Zr4eP1Rbnqa5aRVrnhFBUCdDW6zLOTg0xyqJxOkxjIRgGqdsMlmuWC6eR29LhXSTa1qPZujt2x0IwFe/zTjwNfO6+rbLcbOls3RwbolQUkKHAjNZ5bFoAoBFHFAYnarh33yv3qSo53C8wjPLs8I0+yffWlGGNMipKf3rLs/I4611XA4nIjJL+OOmeFXK4Fecjja3t69wU8QX0fOpLo4om/BkdUs2R8zT91O7jdGOmK+cyzZwMTcLZ3/uHeI3fMZ7DeTv+6peyu2dph7evccdpXu2ZWR32TRH+Gj7IqLczvCMF2sSVbU3VKEk/wBpXokeNfcaJr2WvPRHzOrX38vMhVDTxqwyBDR5OQarWImgxdnX1Q9qba6gkZfCDjorzT86xNfDMGamkliR9LWt3tYaFZyRpWEag8oAoBMUB8zw7gbZttMlr4IuEgOZ/VK1A/PPsrephvp2+Bl3S225NLXLGUrBCk8Rg8RXMIdwnIYzpgWMAaZ51cqqwVrJ5ONjf3tobcnrJR8xUupj+Hm/BnFEvvo+ZsJ4aV8kfQGYG1sHysdmX14C+9eO/u7279X48a+i7eXurOPD/ZkdkvbufiaeOFfOmuYVtJJEfae8BSSd6Uo5HLBP86+10tbnpa/JHzeomo3z8yAfX2rinMbuTwFXEsLBVby8jR7XSoLCSA2aWGrjDDerhkNZV084aCsbWcYs09N8yPpTZ1RMLWvnjXJWgCgA0B8zbaQ1W7be9R1ZwZa3k56OeeP/AFj2Vu6Gea0ZerjiQ9s97cjspjv5WyPonmjw8RWm6VP4lzKKtxwZIuz2nBlDgIqWFbXMjlNPkeLbc24N4hzHd5TbDyXFBHEgHlUl1LsplBc2jmq1QtjJ8kaH+dG0epz/ALKP6qwfcWo/Uvr/AEavvWno/p/Y3/OJs73nvX5Jkd4/1exb3+GOOc137m1e3ZvWOmXg595UZztef2O58qNo9TnD91H9VR+4tR+pfX+jr3rT0f8A37mZ3yY3crxNmtJUlt95TiQriATzr6TT1uqmNb5pGPfNWWOa7yPWelSMjQ1fVoarWsmgjnZWO+bQ25n/AJCVn6k+d/CsTXTxBmppI5kj6S2fRuwRnnWCapKUAUAlAYx5dLOpi6Qb40n0b6O7vEclpyU+8b32RWhoLcPaypq4bo5M/jLBAr6KqZjTiS1tYQ/KitOrIDzqUYHHBUAasTtcYtruX+COFe6ST7yQvdrTE2jk2qGVLCHw03vnUk4xn315ptQ56eNs+mWLqVG51xJ8WDZ8XYbPdvcDcvoGWAnsQ7jON3jjl+M1Q9t1XZe04jt6cc48y37Np9/Y8d3XuGjVig2uE3J2hEt16Q+tmPFhkbx3DhSiT46ADw9k0tXbdY4afCSSbb8eRHDTV1x3XZeeCS8BRYLa9IupjuzDHj2xcxkPNFtaVj9FWRrg8x76e2XKNe5LLkovHFeaOlpa90sZwlldw/lbFR25NjWy465DmFpEoBQ3mlKGQeGgP8PGoIfaknG1S+aOceKRLLQRUoNcnzKVdG24s2THbUSlp1SAT4EitKFjnBSfekUJwUZtIiZC8A1XtkS1xLJ5M7U5Mub1xKD2bQ7Jsnmo4KvcMe8187r7ctRNnSQxHJvsFrsYyEYxpWcWxxQBQCYoCJ2qscfaGxSrbJyEvJ81Q4oUNUqHiCAa6hJwe5HjWVg+bZER+z3KRAuTZD8dW6U8ldFD/aRrX0OnvU4poyb6dj4j62zQ1PjyXcqDbqFqx0Cgf4VoN7oOK70Ul8M1Jlovd3sE2dJukIXdu4rcDzYc7LskrBGMga4061DpqtTCCqltcOTxnOP4+hNbZRKTnHO4fDaWx/lb8vmFO/KhG8Y++jsC5jG9n6WOdR+x6nsvZty2deOcfwde0Ub+22vd9BtF2lizIzTN9EtDsaQqRGlwSkLQVHKk4VpjOtSz0U65OVGMNYalyePIjhqoySVmcp5TXiOJ22UaS9NPYSihy0rt7SnVhTilHXfWfnjNR1/Z84KPFZU9z6eSJJa2Mm+D5YPUTbliFfI8oR3Vwu5ssPtHdyVN5wtOuNCfiajt+zpTpccrdlteT7mdR1qViljhhIo1zlJkTZMhAIS66tYB4gEk1eT2QUeiRVl8c3LqRiG37hLbiRU7zrqsJ6DqT4Cs7U3qMW2W6KdzwbrsDYkW6CxHQMttDJURqSTkn2nJ9tfPTm5y3M2EsLCL0OGlcnotAFAFAFAUfyjbEM7SRhJj7rM9lJ7N3HEfqq6j5VNTdKqWUcWVqawzC5TEu1y1w57K2H2+KVcx1B5jxrdo1MZLKZk3UOLOjb4wNda0I2lSVZ2S9nnUysIth6LvQ6V12iPNh5U8Bzrl2Huw4rfA4nSoZ2ksaxu0mTOkpjw2lOvL4JT06noKoX6mMFlst00Sk+Bqewmx3csLcAckuD0jmNAOOB4Vg3XStllmtXWoLCNWhxkRWQ2j21CdnegCgCgE50AtAB4UBW9p9krdf45bkx0qI1SeCknqk8RXUJyg8xZ44qSwzJL55M7pb3FKtr4kNg/Qf8xYH1jQ/CtCv7Qa+ZFWeki+RWJFrvENW7JtkpP7De+PenNXYa6t95VlpJLuOLnbI8xMeQpf6Xo1aeHCpFq49Tj2aXcj0xb7tKPobdKV4qbKR7zio566td53HST6FhtHk/uU9W9cH0x2xxQz5yz7eA+NUrde38pahpEvmNJ2Z2KYt7YQwwlCM+criVHqTzrPnOU3mRaSSWEXiJEaiNhLY9tcnp3PhQCigCgCgAaUAUAUAUB4caQ4MLQFDxFAMXrNFdzhO6T0oBorZuMefwoD23s7FSQTrjwoB9Ht8Zj6DY9tAOgAOAxQC0AlALQBQCZFALQBmmQFAFAFAFAFAFAFAFAFAFAFAFAYabjbTZEM9q/37RSykq3gd7U73DG7nT6tOdbfZWdpnHA+e7eHZYy8nFcq3Hew/c066ekHQ6/Ku9s+i9Dl21/ql6h3u3hwkPXJSOindUnI00xnI3vhTbPovQdpD9UvUTvNvJ0k3VPX0oPLT402WdEO0g/zS9TxPkw+zSLdJuRc3te3dGN3B6c84r2EZfmSPJzjj4JS/djHvMj1h77w1JtXQh3y6v1Yd5kesPfeGm1dBvl1fqw7zI9Ye+8NNq6DfLq/Vh3mR6w994abV0G+XV+rDvMj1h77w02roN8ur9WHeZHrD33hptXQb5dX6sVMp7eG/IfKc64cOcU2roeqcur9R0mXHx5y7kTk4xIA05culR7JeHoSKxdZep572wV6OXDdx6wM591e7Xju9Dzf4y9RHpTfZnsXp4cyMdo8CPHhXqi+9I8c+HBv1P/Z" alt="" width="72" height="72"> {% endcomment %}
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required
+            autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        {% comment %} <button class="btn btn-lg btn-primary btn-block" type="submit">forgot Password?</button> {% endcomment %}
+        <a id="forgot_password" href="#" style="color: red;">Forgotten password?</a>
+        <p class="mt-5 mb-3 text-muted">&copy; 2023-2024</p>
+    </form>
+</body>
+</html>
